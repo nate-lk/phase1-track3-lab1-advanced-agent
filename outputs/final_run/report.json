@@ -1,0 +1,2050 @@
+{
+  "meta": {
+    "dataset": "hotpot_mini.json",
+    "mode": "real",
+    "num_records": 200,
+    "agents": [
+      "react",
+      "reflexion"
+    ]
+  },
+  "summary": {
+    "react": {
+      "count": 100,
+      "em": 0.94,
+      "avg_attempts": 1,
+      "avg_token_estimate": 528.3,
+      "avg_latency_ms": 3361.3
+    },
+    "reflexion": {
+      "count": 100,
+      "em": 0.99,
+      "avg_attempts": 1.07,
+      "avg_token_estimate": 602.37,
+      "avg_latency_ms": 13782.88
+    },
+    "delta_reflexion_minus_react": {
+      "em_abs": 0.05,
+      "attempts_abs": 0.07,
+      "tokens_abs": 74.07,
+      "latency_abs": 10421.58
+    }
+  },
+  "failure_modes": {
+    "react": {
+      "none": 94,
+      "wrong_final_answer": 6
+    },
+    "reflexion": {
+      "none": 99,
+      "reflection_overfit": 1
+    }
+  },
+  "examples": [
+    {
+      "qid": "hp1",
+      "agent_type": "react",
+      "gold_answer": "Oxford University",
+      "predicted_answer": "Reasoning: The question asks for the university where J. R. R. Tolkien, the author of The Hobbit, taught. From the provided context, it is stated that J. R. R. Tolkien was a professor at Oxford University. Therefore, the answer is directly found in the context.\n\nFinal Answer: Oxford University",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp2",
+      "agent_type": "react",
+      "gold_answer": "River Thames",
+      "predicted_answer": "Reasoning: The question asks for the river that flows through the city where Ada Lovelace was born. From the context provided, we know that Ada Lovelace was born in London. Additionally, the context about London states that it is crossed by the River Thames. Therefore, the river that flows through London, where Ada Lovelace was born, is the River Thames.\n\nFinal Answer: River Thames",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp3",
+      "agent_type": "react",
+      "gold_answer": "violin",
+      "predicted_answer": "Reasoning: The context states that Antonio Vivaldi is the composer of The Four Seasons and that he was a virtuoso violinist. This indicates that the main instrument he played was the violin.\n\nFinal Answer: Violin",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp4",
+      "agent_type": "react",
+      "gold_answer": "Pacific Ocean",
+      "predicted_answer": "Reasoning: The question asks for the ocean that borders the country whose capital is Lima. From the context, we know that Lima is the capital city of Peru. Additionally, the text states that Peru borders the Pacific Ocean. Therefore, the ocean that borders Peru, the country with Lima as its capital, is the Pacific Ocean.\n\nFinal Answer: Pacific Ocean",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp5",
+      "agent_type": "react",
+      "gold_answer": "mathematics",
+      "predicted_answer": "Reasoning: The context states that Isaac Newton was a physicist and mathematician. Since he is the scientist who proposed the three laws of motion, we can conclude that in addition to physics, he also studied mathematics.\n\nFinal Answer: Mathematics",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp6",
+      "agent_type": "react",
+      "gold_answer": "Dead Sea",
+      "predicted_answer": "Reasoning: The question asks for the sea that borders the country where Petra is located. From the context, we know that Petra is in Jordan. Additionally, the context states that Jordan borders the Dead Sea to the west. Therefore, the sea that borders Jordan, and thus the country where Petra is located, is the Dead Sea.\n\nFinal Answer: The Dead Sea.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp7",
+      "agent_type": "react",
+      "gold_answer": "Romance",
+      "predicted_answer": "Reasoning: The context states that the official language of Brazil is Portuguese. Additionally, it mentions that Portuguese is a Romance language. Since the Romance languages are a branch of the larger Indo-European language family, we can conclude that Portuguese, being a Romance language, belongs to this family.\n\nFinal Answer: The primary language of Brazil belongs to the Romance language family.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp8",
+      "agent_type": "react",
+      "gold_answer": "Himalayas",
+      "predicted_answer": "Reasoning: The question asks for the mountain range that contains the highest mountain in Nepal, which is the country whose capital is Kathmandu. From the context provided, we know that Mount Everest is the highest mountain in Nepal and that it is part of the Himalayas. Therefore, the mountain range that contains Mount Everest is the Himalayas.\n\nFinal Answer: Himalayas",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp9",
+      "agent_type": "react",
+      "gold_answer": "Paris",
+      "predicted_answer": "Reasoning: The context states that the Eiffel Tower is located on the Champ de Mars in Paris, France. Additionally, the text about Paris confirms that it is the capital city of France. Therefore, the city where the Eiffel Tower is located is Paris.\n\nFinal Answer: Paris",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp10",
+      "agent_type": "react",
+      "gold_answer": "Brazilian real",
+      "predicted_answer": "Reasoning: The question asks for the currency used in the country that hosted the 2016 Summer Olympics. From the context provided, we know that the 2016 Summer Olympics were hosted in Rio de Janeiro, Brazil. Additionally, the context states that the currency of Brazil is the Brazilian real. Therefore, the currency used in Brazil, the host country, is the Brazilian real.\n\nFinal Answer: Brazilian real",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp11",
+      "agent_type": "react",
+      "gold_answer": "Lake Geneva",
+      "predicted_answer": "Reasoning: The context states that Geneva is a city in Switzerland. It also mentions that Switzerland borders Lake Geneva, which it shares with France. Therefore, the lake that borders the country containing Geneva is Lake Geneva.\n\nFinal Answer: Lake Geneva",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp12",
+      "agent_type": "react",
+      "gold_answer": "Ankara River",
+      "predicted_answer": "Reasoning: The question asks for the river that runs through the capital of Turkey. From the context provided, we know that the capital of Turkey is Ankara. Additionally, the text states that the Ankara River runs through the city of Ankara. Therefore, the river in question is the Ankara River.\n\nFinal Answer: Ankara River",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp13",
+      "agent_type": "react",
+      "gold_answer": "Mount Everest",
+      "predicted_answer": "Reasoning: The context states that \"Mount Everest is Earth's highest mountain above sea level.\" This directly indicates that Mount Everest is the tallest mountain in the world. \n\nFinal Answer: Mount Everest",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp14",
+      "agent_type": "react",
+      "gold_answer": "Arabic",
+      "predicted_answer": "Reasoning: The question asks for the most spoken language in the country where the Pyramids of Giza are located. From the context provided, we know that the Pyramids of Giza are in Egypt. Additionally, the context states that the official language of Egypt is Arabic. Since the official language is typically the most spoken language in a country, we can conclude that Arabic is the most spoken language in Egypt.\n\nFinal Answer: Arabic",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp15",
+      "agent_type": "react",
+      "gold_answer": "Africa",
+      "predicted_answer": "Reasoning: The question asks for the continent of the country whose capital is Nairobi. From the context, we know that Nairobi is the capital of Kenya. Additionally, the text states that Kenya is a country in East Africa. Since East Africa is located on the continent of Africa, we can conclude that Kenya, and therefore Nairobi, belongs to Africa.\n\nFinal Answer: Africa",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp16",
+      "agent_type": "react",
+      "gold_answer": "Ottawa",
+      "predicted_answer": "Reasoning: The question asks for the capital of the country whose flag features a red maple leaf. From the provided context, we know that the flag of Canada has a red maple leaf. Additionally, it is stated that the capital of Canada is Ottawa. Therefore, the capital of the country with the flag containing a red maple leaf is Ottawa.\n\nFinal Answer: Ottawa",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp17",
+      "agent_type": "react",
+      "gold_answer": "Sea of Crete",
+      "predicted_answer": "Reasoning: The context states that Athens is the capital of Greece. It also mentions that the Sea of Crete lies between mainland Greece and the island of Crete. The term \"strait\" typically refers to a narrow body of water that connects two larger bodies of water. In this case, the Sea of Crete is the body of water separating mainland Greece (where Athens is located) from the island of Crete. Therefore, the strait that separates them is not explicitly named in the context, but it is implied that the Sea of Crete serves this purpose.\n\nFinal Answer: The Sea of Crete.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp18",
+      "agent_type": "react",
+      "gold_answer": "Mars",
+      "predicted_answer": "Reasoning: The context provided states that Mars is often called the Red Planet due to its reddish appearance. Therefore, the answer to the question about which planet is known as the Red Planet is directly found in the text.\n\nFinal Answer: Mars",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp19",
+      "agent_type": "react",
+      "gold_answer": "Mediterranean Sea",
+      "predicted_answer": "Reasoning: The question asks about the longest river in Africa, which is the Nile. According to the provided context, the Nile empties into the Mediterranean Sea. Therefore, the answer to the question is the Mediterranean Sea.\n\nFinal Answer: Mediterranean Sea",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp20",
+      "agent_type": "react",
+      "gold_answer": "soybeans",
+      "predicted_answer": "Reasoning: The question asks for the primary export of the country where the Amazon rainforest is largest. From the context, we know that the largest portion of the Amazon rainforest is in Brazil. Additionally, the text states that the primary export of Brazil is soybeans. Therefore, the primary export of the country where the Amazon rainforest is largest (Brazil) is soybeans.\n\nFinal Answer: Soybeans.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp21",
+      "agent_type": "react",
+      "gold_answer": "Leonardo da Vinci",
+      "predicted_answer": "Reasoning: The context provided states that \"The Mona Lisa was painted by Leonardo da Vinci.\" This directly answers the question of who painted the Mona Lisa.\n\nFinal Answer: Leonardo da Vinci.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp22",
+      "agent_type": "react",
+      "gold_answer": "tennis",
+      "predicted_answer": "Reasoning: The context provided states that \"The Championships, Wimbledon\" is a tennis tournament. Since Wimbledon is specifically mentioned in relation to a tennis tournament, it indicates that the sport associated with the stadium called Wimbledon is tennis.\n\nFinal Answer: Tennis",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp23",
+      "agent_type": "react",
+      "gold_answer": "Arabian Desert",
+      "predicted_answer": "Reasoning: The question asks for the desert that covers most of the country whose capital is Riyadh. From the context provided, we know that Riyadh is the capital of Saudi Arabia. Additionally, the text about Saudi Arabia states that the Arabian Desert covers most of the country. Therefore, the answer to the question is the Arabian Desert.\n\nFinal Answer: The Arabian Desert.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp24",
+      "agent_type": "react",
+      "gold_answer": "Japanese",
+      "predicted_answer": "Reasoning: The question asks for the national language of the country whose capital is Tokyo. From the context provided, we know that Tokyo is the capital of Japan. Additionally, the text about Japan states that the national language of Japan is Japanese. Therefore, the national language of the country whose capital is Tokyo (Japan) is Japanese.\n\nFinal Answer: Japanese",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp25",
+      "agent_type": "react",
+      "gold_answer": "Au",
+      "predicted_answer": "Reasoning: The context states that gold is a chemical element with the symbol Au. Since the question asks for the chemical symbol for gold, I can directly refer to the information provided in the context.\n\nFinal Answer: Au",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp26",
+      "agent_type": "react",
+      "gold_answer": "Black Sea",
+      "predicted_answer": "Reasoning: The context states that the Danube river passes through Vienna, which is the capital of Austria. Additionally, it is mentioned that the Danube flows into the Black Sea. Therefore, since the river in question is the Danube, I can conclude that the body of water it flows into is the Black Sea.\n\nFinal Answer: The Black Sea.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp27",
+      "agent_type": "react",
+      "gold_answer": "Chimborazo",
+      "predicted_answer": "Reasoning: The question asks for the highest peak in the country that contains the city of Quito. From the context, we know that Quito is the capital of Ecuador. Additionally, the text states that the highest peak in Ecuador is Chimborazo. Therefore, since Quito is in Ecuador, the highest peak in that country is Chimborazo.\n\nFinal Answer: Chimborazo",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp28",
+      "agent_type": "react",
+      "gold_answer": "Persian Gulf",
+      "predicted_answer": "Reasoning: The question asks for the gulf that borders the country whose capital is Doha. From the context provided, we know that Doha is the capital of Qatar. Additionally, the text states that Qatar is a peninsula that juts into the Persian Gulf. Therefore, the gulf that borders Qatar, and thus the country whose capital is Doha, is the Persian Gulf.\n\nFinal Answer: Persian Gulf",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp29",
+      "agent_type": "react",
+      "gold_answer": "carbon dioxide",
+      "predicted_answer": "Reasoning: The context provided states that plants absorb carbon dioxide during photosynthesis. Additionally, the definition of carbon dioxide confirms that it is a gas. Therefore, the gas that plants primarily absorb for photosynthesis is carbon dioxide.\n\nFinal Answer: Carbon dioxide.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp30",
+      "agent_type": "react",
+      "gold_answer": "Arthur Conan Doyle",
+      "predicted_answer": "Reasoning: The context states that \"A Study in Scarlet is the novel that first introduced Sherlock Holmes\" and that \"A Study in Scarlet was written by Arthur Conan Doyle.\" Therefore, since Arthur Conan Doyle is the author of the novel that introduced Sherlock Holmes, he is the answer to the question.\n\nFinal Answer: Arthur Conan Doyle",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp31",
+      "agent_type": "react",
+      "gold_answer": "North Atlantic Current",
+      "predicted_answer": "Reasoning: The context states that Reykjavik is the capital of Iceland. Additionally, it mentions that the coast of Iceland is warmed by the North Atlantic Current. Since Reykjavik is in Iceland, the ocean current that warms its coast is the North Atlantic Current.\n\nFinal Answer: North Atlantic Current",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp32",
+      "agent_type": "react",
+      "gold_answer": "New York City",
+      "predicted_answer": "Reasoning: The context explicitly states that the headquarters of the United Nations is located in New York City. There is no need for further inference or additional information since the answer is directly provided.\n\nFinal Answer: New York City",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp33",
+      "agent_type": "react",
+      "gold_answer": "Hydrogen",
+      "predicted_answer": "Reasoning: The context states that hydrogen has the atomic number 1. Since the question asks for the element with atomic number 1, and the provided information directly identifies hydrogen as having this atomic number, I can conclude that hydrogen is the answer.\n\nFinal Answer: Hydrogen",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp34",
+      "agent_type": "react",
+      "gold_answer": "Isabella I of Castile",
+      "predicted_answer": "Reasoning: The context states that the first circumnavigation of the globe was funded by the Spanish Empire. It also mentions that Queen Isabella I of Castile co-founded the Spanish Empire and funded early voyages of exploration. Since the Spanish Empire is the entity that funded the circumnavigation, and Queen Isabella I is associated with the founding and funding of the empire, it follows that she is the queen who ruled the empire that funded the first circumnavigation.\n\nFinal Answer: Queen Isabella I of Castile.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp35",
+      "agent_type": "react",
+      "gold_answer": "Challenger Deep",
+      "predicted_answer": "Reasoning: The context states that the Mariana Trench contains the deepest known point on Earth. Additionally, it specifies that the Challenger Deep is the deepest part of the Mariana Trench. Therefore, the deepest point on Earth is the Challenger Deep.\n\nFinal Answer: Challenger Deep",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp36",
+      "agent_type": "react",
+      "gold_answer": "Mekong",
+      "predicted_answer": "Reasoning: The context provided states that the Mekong river forms much of the border between Thailand and Laos. Therefore, to answer the question about which river serves as the border between these two countries, I can directly refer to this information.\n\nFinal Answer: The Mekong river.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp37",
+      "agent_type": "react",
+      "gold_answer": "Buckingham Palace",
+      "predicted_answer": "Reasoning: The question asks for the official residence of the head of state of the country whose parliament meets at Westminster. From the context, we know that the parliament of the United Kingdom meets at the Palace of Westminster. Therefore, we are looking for the official residence of the head of state of the United Kingdom. The context also states that the official London residence of the UK monarch is Buckingham Palace. Since the monarch is the head of state, Buckingham Palace is the answer we are looking for.\n\nFinal Answer: Buckingham Palace",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp38",
+      "agent_type": "react",
+      "gold_answer": "blue whale",
+      "predicted_answer": "Reasoning: The context provided states that the blue whale is the largest animal known to have ever existed. Since the blue whale is a mammal, it follows that it is also the largest mammal in the world.\n\nFinal Answer: The blue whale.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp39",
+      "agent_type": "react",
+      "gold_answer": "Mount Vesuvius",
+      "predicted_answer": "Reasoning: The context provided states that Pompeii was destroyed by a volcanic eruption in 79 AD and that Mount Vesuvius erupted in the same year, leading to the destruction of Pompeii. Therefore, the volcano that last erupted in 79 AD and destroyed Pompeii is Mount Vesuvius.\n\nFinal Answer: Mount Vesuvius",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp40",
+      "agent_type": "react",
+      "gold_answer": "Indian Ocean",
+      "predicted_answer": "Reasoning: The context states that the First Fleet sailed across the Indian Ocean to reach Australia. Since Botany Bay is located in Australia, the ocean crossed by the First Fleet to reach its destination is the Indian Ocean.\n\nFinal Answer: Indian Ocean",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp41",
+      "agent_type": "react",
+      "gold_answer": "Paris",
+      "predicted_answer": "Reasoning: The context provided states that \"Paris is the capital and most populous city of France.\" This directly answers the question about the capital of France.\n\nFinal Answer: Paris",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp42",
+      "agent_type": "react",
+      "gold_answer": "Italy",
+      "predicted_answer": "Reasoning: The opera \"Madama Butterfly\" was composed by Giacomo Puccini. The context states that Giacomo Puccini is an Italian opera composer. Therefore, the origin country of Giacomo Puccini is Italy, which is a European country, not an island nation. \n\nFinal Answer: Italy",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp43",
+      "agent_type": "react",
+      "gold_answer": "Atlantic Ocean",
+      "predicted_answer": "Reasoning: The question asks for the ocean that borders the western coast of the country whose capital is Luanda. From the context provided, we know that Luanda is the capital of Angola. Additionally, the text about Angola states that its western coast borders the Atlantic Ocean. Therefore, the ocean that borders the western coast of Angola, which is the country with Luanda as its capital, is the Atlantic Ocean.\n\nFinal Answer: Atlantic Ocean",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp44",
+      "agent_type": "react",
+      "gold_answer": "football",
+      "predicted_answer": "Reasoning: The context provided states that FC Barcelona is a professional football club. Additionally, the term \"football\" in this context refers to association football, which is also known as soccer. Therefore, FC Barcelona primarily competes in the sport of football (soccer).\n\nFinal Answer: Football (soccer)",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp45",
+      "agent_type": "react",
+      "gold_answer": "100",
+      "predicted_answer": "Reasoning: The context states that \"Water boils at 100 degrees Celsius at sea level.\" This directly provides the boiling point of water at that specific atmospheric pressure, which is sea level. The second piece of context mentions that boiling point depends on atmospheric pressure, but since the question specifically asks for the boiling point at sea level, we can rely on the first statement.\n\nFinal Answer: 100 degrees Celsius",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp46",
+      "agent_type": "react",
+      "gold_answer": "Sea of Japan",
+      "predicted_answer": "Reasoning: The context states that Busan is located on the Korean Peninsula. Additionally, it mentions that the Sea of Japan lies to the east of the Korean Peninsula. Therefore, the sea that lies to the east of the peninsula where Busan is located is the Sea of Japan.\n\nFinal Answer: Sea of Japan",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp47",
+      "agent_type": "react",
+      "gold_answer": "euro",
+      "predicted_answer": "Reasoning: The Colosseum is located in Rome, which is in Italy. According to the context provided, the official currency of Italy is the euro. Therefore, the currency of the country where the Colosseum stands is the euro.\n\nFinal Answer: Euro",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp48",
+      "agent_type": "react",
+      "gold_answer": "Albert Einstein",
+      "predicted_answer": "Reasoning: The context provided states that general relativity is a theory of gravitation developed by Albert Einstein. Therefore, the scientist who developed this theory is clearly mentioned in the text.\n\nFinal Answer: Albert Einstein",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp49",
+      "agent_type": "react",
+      "gold_answer": "Pyrenees",
+      "predicted_answer": "Reasoning: The question asks for the mountain range that forms the northern border of the country whose capital is Madrid. From the context provided, we know that Madrid is the capital of Spain. Additionally, the text about Spain states that the Pyrenees form the northern border of Spain with France. Therefore, the mountain range that forms the northern border of Spain, which is the country with Madrid as its capital, is the Pyrenees.\n\nFinal Answer: The Pyrenees.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp50",
+      "agent_type": "react",
+      "gold_answer": "Antarctic Desert",
+      "predicted_answer": "Reasoning: The context states that the Antarctic Desert is the largest desert in the world by area. It is important to note that deserts are defined by low precipitation rather than temperature, but this does not change the fact that the Antarctic Desert holds the title of the largest desert.\n\nFinal Answer: The Antarctic Desert.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp51",
+      "agent_type": "react",
+      "gold_answer": "yen",
+      "predicted_answer": "Reasoning: The question asks for the currency of the country whose capital is Tokyo. From the context provided, we know that Tokyo is the capital city of Japan. Additionally, the context states that the official currency of Japan is the yen. Therefore, the currency of the country (Japan) whose capital is Tokyo is the yen.\n\nFinal Answer: Yen",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp52",
+      "agent_type": "react",
+      "gold_answer": "Mediterranean Sea",
+      "predicted_answer": "Reasoning: The context states that the ancient city of Carthage was located in present-day Tunisia. Additionally, it mentions that Tunisia borders the Mediterranean Sea to the north. Therefore, the sea that borders the country where Carthage was located is the Mediterranean Sea.\n\nFinal Answer: Mediterranean Sea",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp53",
+      "agent_type": "react",
+      "gold_answer": "Colombia",
+      "predicted_answer": "Reasoning: The question asks for the native country of the author of \"One Hundred Years of Solitude.\" From the provided context, we know that the author is Gabriel Garc\u00eda M\u00e1rquez. The second text states that he was a Colombian novelist. Therefore, his native country is Colombia.\n\nFinal Answer: Colombia",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp54",
+      "agent_type": "react",
+      "gold_answer": "River Avon",
+      "predicted_answer": "Reasoning: The question asks for the river that flows through the city where William Shakespeare was born. From the context provided, we know that Shakespeare was born in Stratford-upon-Avon. Additionally, the text about Stratford-upon-Avon states that it is a town on the River Avon. Therefore, the river that flows through Stratford-upon-Avon is the River Avon.\n\nFinal Answer: River Avon",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp55",
+      "agent_type": "react",
+      "gold_answer": "Ras Dashen",
+      "predicted_answer": "Reasoning: The question asks for the highest mountain in the country whose capital is Addis Ababa. From the context provided, we know that Addis Ababa is the capital city of Ethiopia. Additionally, the text states that the highest mountain in Ethiopia is Ras Dashen. Therefore, Ras Dashen is the highest mountain in the country with Addis Ababa as its capital.\n\nFinal Answer: Ras Dashen",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp56",
+      "agent_type": "react",
+      "gold_answer": "Indian Ocean",
+      "predicted_answer": "Reasoning: The context states that Mal\u00e9 is the capital city of the Maldives, and it also mentions that the Maldives is an island nation situated in the Indian Ocean. Therefore, to answer the question about the ocean in which the Maldives is located, I can directly refer to the information provided.\n\nFinal Answer: Indian Ocean",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp57",
+      "agent_type": "react",
+      "gold_answer": "helium",
+      "predicted_answer": "Reasoning: The context states that in the Sun, hydrogen atoms fuse together to produce helium. Since the question asks for the gas produced through nuclear fusion, we need to identify the product of this fusion process. The text explicitly mentions that helium is produced as a result of the fusion of hydrogen atoms.\n\nFinal Answer: Helium",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp58",
+      "agent_type": "react",
+      "gold_answer": "Lake Tana",
+      "predicted_answer": "Reasoning: The context provided states that the Blue Nile originates in Ethiopia and specifically mentions that it flows from Lake Tana in the Ethiopian Highlands. Therefore, Lake Tana is identified as the source of the Blue Nile.\n\nFinal Answer: Lake Tana",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp59",
+      "agent_type": "react",
+      "gold_answer": "badminton",
+      "predicted_answer": "Reasoning: The context states that Alexander Graham Bell, the inventor of the telephone, enjoyed badminton in his youth. Badminton is a sport that requires a net and a racket. Therefore, the answer to the question about what sport he played is directly found in the provided information.\n\nFinal Answer: Badminton",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp60",
+      "agent_type": "react",
+      "gold_answer": "Spanish",
+      "predicted_answer": "Reasoning: The question asks for the official language of the country whose capital is Buenos Aires. From the context provided, we know that Buenos Aires is the capital city of Argentina. Additionally, the context states that the official language of Argentina is Spanish. Therefore, the official language of the country with Buenos Aires as its capital is Spanish.\n\nFinal Answer: Spanish",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp61",
+      "agent_type": "react",
+      "gold_answer": "Bosphorus",
+      "predicted_answer": "Reasoning: The question asks for the name of the strait that connects the Black Sea to the Sea of Marmara and is located in the city where the Hagia Sophia is situated. From the context provided, we know that the Hagia Sophia is located in Istanbul, and the text about Istanbul mentions that it is divided by the Bosphorus strait. Therefore, the Bosphorus strait is the correct answer.\n\nFinal Answer: Bosphorus strait",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp62",
+      "agent_type": "react",
+      "gold_answer": "Netherlands",
+      "predicted_answer": "Reasoning: The question asks for the country of origin of the painter of \"The Starry Night.\" From the context provided, it states that \"The Starry Night was painted by Vincent van Gogh,\" and further information reveals that \"Vincent van Gogh was a Dutch post-impressionist painter from the Netherlands.\" Therefore, I can conclude that the country of origin is the Netherlands.\n\nFinal Answer: The Netherlands.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp63",
+      "agent_type": "react",
+      "gold_answer": "Jupiter",
+      "predicted_answer": "Reasoning: The context provided states that Jupiter is the largest planet in the solar system. There are no other planets mentioned that could be larger than Jupiter, and the information is clear and direct.\n\nFinal Answer: Jupiter",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp64",
+      "agent_type": "react",
+      "gold_answer": "Andes",
+      "predicted_answer": "Reasoning: The question asks for the mountain range that runs along the western coast of the country whose capital is Santiago. From the context, we know that Santiago is the capital of Chile. The provided information does not mention a specific mountain range on the western coast of Chile, but it does state that the Andes mountain range runs along the eastern border of Chile. \n\nTo answer the question, I need to recall general knowledge about Chile. The western coast of Chile is bordered by the Pacific Ocean, and the coastal mountain range that runs along this area is known as the Coastal Range or the Cordillera de la Costa.\n\nFinal Answer: The Coastal Range (Cordillera de la Costa) runs along the western coast of Chile.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp65",
+      "agent_type": "react",
+      "gold_answer": "Buddhism",
+      "predicted_answer": "Reasoning: The question asks for the primary religion in the country where Angkor Wat is located. From the context provided, Angkor Wat is located in Cambodia. The text about Cambodia states that the predominant religion there is Theravada Buddhism. Therefore, the primary religion in Cambodia, where Angkor Wat is situated, is Theravada Buddhism.\n\nFinal Answer: Theravada Buddhism",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp66",
+      "agent_type": "react",
+      "gold_answer": "Atlantic Ocean",
+      "predicted_answer": "Reasoning: The context provided states that the Congo River empties into the Atlantic Ocean on the west coast of Africa. Therefore, the answer to the question about which ocean the Congo River empties into is directly found in the text.\n\nFinal Answer: Atlantic Ocean",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp67",
+      "agent_type": "react",
+      "gold_answer": "diamond",
+      "predicted_answer": "Reasoning: The context provided states that diamond scores 10 on the Mohs scale and is described as the hardest natural substance on Earth. Therefore, based on this information, I can conclude that the hardest natural substance is diamond.\n\nFinal Answer: Diamond",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp68",
+      "agent_type": "react",
+      "gold_answer": "Strait of Sicily",
+      "predicted_answer": "Reasoning: The context provided states that the Strait of Sicily is the body of water that separates Sicily from Tunisia. Since the Strait of Sicily is a part of the Mediterranean Sea, it implies that the Mediterranean Sea lies between Sicily and Tunisia.\n\nFinal Answer: The Mediterranean Sea.",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp69",
+      "agent_type": "react",
+      "gold_answer": "United States",
+      "predicted_answer": "Reasoning: The context states that Kilauea is located on the Big Island of Hawaii. Additionally, it mentions that Hawaii is a state of the United States. Therefore, since Hawaii is part of the United States, Kilauea is located in the United States.\n\nFinal Answer: United States",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp70",
+      "agent_type": "react",
+      "gold_answer": "Devanagari",
+      "predicted_answer": "Reasoning: The question asks for the writing system of the language with the most native speakers in India, which is where the Taj Mahal is located. According to the context provided, Hindi is the most widely spoken native language in India, and it is written in the Devanagari script. Therefore, the writing system used by Hindi is the answer.\n\nFinal Answer: Devanagari script",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp71",
+      "agent_type": "react",
+      "gold_answer": "Beijing",
+      "predicted_answer": "Reasoning: The Great Wall of China was built in China, as stated in the context. The capital of China is provided in the second piece of context, which is Beijing. Therefore, the capital of the country where the Great Wall was built is the same as the capital of China.\n\nFinal Answer: Beijing",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp72",
+      "agent_type": "react",
+      "gold_answer": "Southern Ocean",
+      "predicted_answer": "Reasoning: The context states that penguins are native to Antarctica, which is the continent in question. Additionally, it mentions that Antarctica is surrounded by the Southern Ocean. Therefore, the ocean that surrounds the continent where penguins live in the wild is the Southern Ocean.\n\nFinal Answer: Southern Ocean",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp73",
+      "agent_type": "react",
+      "gold_answer": "French",
+      "predicted_answer": "Reasoning: The question asks for the most widely spoken language in the country where the Louvre museum is located. From the context, we know that the Louvre is located in Paris, France. Additionally, the context states that the official and most widely spoken language of France is French. Therefore, the answer to the question is French.\n\nFinal Answer: French",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp74",
+      "agent_type": "react",
+      "gold_answer": "Rhine",
+      "predicted_answer": "Reasoning: The context states that Ludwig van Beethoven was born in Bonn, Germany. Additionally, it mentions that Bonn is a city on the Rhine river. Therefore, the river that flows through Bonn, the city where Beethoven was born, is the Rhine river.\n\nFinal Answer: Rhine river",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp75",
+      "agent_type": "react",
+      "gold_answer": "Buran",
+      "predicted_answer": "Reasoning: The context provided mentions a wind called the Buran, which originates in Siberia and affects Central Asia. It is described as a strong cold northeasterly wind that brings blizzard conditions. Since the question specifically asks for the name of the wind that brings cold air from Siberia to Central Asia, and the Buran is identified as such, it is clear that the answer is the Buran.\n\nFinal Answer: Buran",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp76",
+      "agent_type": "react",
+      "gold_answer": "Mali",
+      "predicted_answer": "Reasoning: The context provided states that Timbuktu is a historic city and also specifies its location in the West African country of Mali. Since the question asks for the country where Timbuktu is located, I can directly refer to the information given in the second text.\n\nFinal Answer: Mali",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp77",
+      "agent_type": "react",
+      "gold_answer": "Proxima Centauri",
+      "predicted_answer": "Reasoning: The context states that Proxima Centauri is part of the Alpha Centauri system and is identified as the closest individual star to Earth. Since the question asks for the closest star, I can directly refer to the information provided.\n\nFinal Answer: Proxima Centauri.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp78",
+      "agent_type": "react",
+      "gold_answer": "Bay of Bengal",
+      "predicted_answer": "Reasoning: The question asks for the bay that lies to the east of the country where Mumbai is located. From the context, we know that Mumbai is a major city in India. The provided information states that the Bay of Bengal lies to the east of India. Therefore, the Bay of Bengal is the bay that lies to the east of India, where Mumbai is located.\n\nFinal Answer: Bay of Bengal",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp79",
+      "agent_type": "react",
+      "gold_answer": "Russian",
+      "predicted_answer": "Reasoning: The question asks for the nationality of the author of \"Crime and Punishment.\" From the context provided, we know that \"Crime and Punishment\" was written by Fyodor Dostoevsky. Additionally, the context states that Fyodor Dostoevsky was a Russian novelist. Therefore, the nationality of the author is Russian.\n\nFinal Answer: Russian",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp80",
+      "agent_type": "react",
+      "gold_answer": "H2O",
+      "predicted_answer": "Reasoning: The context provided states that a water molecule consists of two hydrogen atoms and one oxygen atom. This composition is represented by the chemical formula H2O, where \"H\" stands for hydrogen and \"O\" stands for oxygen.\n\nFinal Answer: H2O",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp81",
+      "agent_type": "react",
+      "gold_answer": "Gobi Desert",
+      "predicted_answer": "Reasoning: The question asks for the desert that occupies most of the country where Ulaanbaatar is the capital. From the context provided, Ulaanbaatar is the capital of Mongolia. The second piece of context mentions that the Gobi Desert covers much of southern Mongolia. Therefore, since Ulaanbaatar is in Mongolia, and the Gobi Desert is noted to cover much of southern Mongolia, it follows that the Gobi Desert is the desert that occupies most of the country.\n\nFinal Answer: Gobi Desert",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp82",
+      "agent_type": "react",
+      "gold_answer": "India",
+      "predicted_answer": "Reasoning: The context states that chess originated in the Gupta Empire, which is identified as an ancient Indian empire. Therefore, it can be inferred that the game of chess was invented in India.\n\nFinal Answer: India invented the game of chess.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp83",
+      "agent_type": "react",
+      "gold_answer": "Burj Khalifa",
+      "predicted_answer": "Reasoning: The question asks for the tallest building in the country whose capital is Abu Dhabi. From the context, we know that Abu Dhabi is the capital of the United Arab Emirates (UAE). The text also states that the Burj Khalifa, located in Dubai, UAE, is the tallest building in the world and in the UAE. Since the Burj Khalifa is in the UAE, it is also the tallest building in the country whose capital is Abu Dhabi.\n\nFinal Answer: Burj Khalifa",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp84",
+      "agent_type": "react",
+      "gold_answer": "Africa",
+      "predicted_answer": "Reasoning: The question asks for the continent on which the country whose capital is Cairo is located. From the context, we know that Cairo is the capital city of Egypt. Additionally, the text about Egypt states that it is a transcontinental country, with the majority of its territory located in northeastern Africa. This indicates that the primary continent for Egypt is Africa.\n\nFinal Answer: Africa",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp85",
+      "agent_type": "react",
+      "gold_answer": "Eduskunta",
+      "predicted_answer": "Reasoning: The question asks for the name of the parliament of the country where Jean Sibelius was born. According to the context provided, Sibelius was born in H\u00e4meenlinna, Finland. The second piece of context states that the parliament of Finland is called the Eduskunta. Therefore, the answer to the question is the name of the Finnish parliament.\n\nFinal Answer: Eduskunta",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp86",
+      "agent_type": "react",
+      "gold_answer": "Atlantic Ocean",
+      "predicted_answer": "Reasoning: The context states that the Amazon River empties into the Atlantic Ocean. Since the Atlantic Ocean is a major body of saltwater that connects to various seas, I need to identify which sea is associated with the Atlantic Ocean. The Amazon River does not directly empty into a specific sea but rather into the ocean itself. However, the Atlantic Ocean is bordered by several seas, such as the Caribbean Sea. \n\nFinal Answer: The Amazon River empties into the Atlantic Ocean.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp87",
+      "agent_type": "react",
+      "gold_answer": "300000 km/s",
+      "predicted_answer": "Reasoning: The speed of light in a vacuum is given as approximately 299,792 kilometres per second. To round this number to the nearest thousand, we look at the hundreds digit, which is 7. Since 7 is greater than 5, we round up the thousands digit (which is 299) by 1. Therefore, 299,792 rounded to the nearest thousand is 300,000.\n\nFinal Answer: 300,000 km/s",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp88",
+      "agent_type": "react",
+      "gold_answer": "North Sea Canal",
+      "predicted_answer": "Reasoning: The context provided states that the North Sea Canal connects Amsterdam to the North Sea. Therefore, the answer to the question about which canal connects the city of Amsterdam to the North Sea is directly mentioned in the text.\n\nFinal Answer: The North Sea Canal.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp89",
+      "agent_type": "react",
+      "gold_answer": "Spain",
+      "predicted_answer": "Reasoning: The author of the novel \"Don Quixote\" is Miguel de Cervantes. According to the context provided, Miguel de Cervantes was a Spanish writer. Therefore, the country he comes from is Spain.\n\nFinal Answer: Spain",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp90",
+      "agent_type": "react",
+      "gold_answer": "skin",
+      "predicted_answer": "Reasoning: The context provided states that the skin is the largest organ of the human body, covering its entire outer surface. This directly answers the question about which organ is the largest.\n\nFinal Answer: The skin.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp91",
+      "agent_type": "react",
+      "gold_answer": "Buddhism",
+      "predicted_answer": "Reasoning: Angkor Thom is located in present-day Cambodia. The context provided states that the predominant religion in Cambodia is Theravada Buddhism, which is practiced by the majority of the population. Therefore, the main religion practiced in the country where Angkor Thom was built is the same as the predominant religion in Cambodia.\n\nFinal Answer: Theravada Buddhism",
+      "is_correct": false,
+      "attempts": 1,
+      "failure_mode": "wrong_final_answer",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp92",
+      "agent_type": "react",
+      "gold_answer": "Ural Mountains",
+      "predicted_answer": "Reasoning: The context provided states that the boundary between Europe and Asia is conventionally defined by the Ural Mountains in Russia. It also reiterates that the Ural Mountains are considered the dividing line between the two continents. Therefore, the mountain range that separates Europe from Asia in Russia is clearly identified as the Ural Mountains.\n\nFinal Answer: Ural Mountains",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp93",
+      "agent_type": "react",
+      "gold_answer": "Spanish",
+      "predicted_answer": "Reasoning: Machu Picchu is located in Peru, as stated in the context. The official languages of Peru include Spanish, Quechua, and Aymara. Among these, Spanish is noted as the primary official language. Therefore, the official language of the country where Machu Picchu is located is Spanish.\n\nFinal Answer: Spanish",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp94",
+      "agent_type": "react",
+      "gold_answer": "Adriatic Sea",
+      "predicted_answer": "Reasoning: The context provided states that the Adriatic Sea lies between the Italian Peninsula to the west and the Balkan Peninsula to the east. Therefore, the sea that is located between these two peninsulas is the Adriatic Sea.\n\nFinal Answer: Adriatic Sea",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp95",
+      "agent_type": "react",
+      "gold_answer": "gravity",
+      "predicted_answer": "Reasoning: The context provided states that planets orbit the Sun due to the gravitational force exerted by the Sun's large mass. This indicates that the force responsible for keeping planets in orbit is gravity, which is defined as the force that attracts objects with mass toward one another.\n\nFinal Answer: Gravity",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp96",
+      "agent_type": "react",
+      "gold_answer": "euro",
+      "predicted_answer": "Reasoning: The Acropolis of Athens is located in Greece. According to the provided context, Greece adopted the euro as its official currency in 2002. Therefore, the national currency of Greece, where the Acropolis is located, is the euro.\n\nFinal Answer: Euro",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp97",
+      "agent_type": "react",
+      "gold_answer": "Gulf Stream",
+      "predicted_answer": "Reasoning: The context mentions that the western coast of Norway remains ice-free throughout the year despite its high latitude. It also states that the Gulf Stream is a warm ocean current that moderates temperatures along the western coasts of Europe, including Norway. Therefore, it can be inferred that the Gulf Stream is responsible for keeping the western coast of Norway free of ice year-round.\n\nFinal Answer: The Gulf Stream.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp98",
+      "agent_type": "react",
+      "gold_answer": "Germany",
+      "predicted_answer": "Reasoning: The context states that Johann Sebastian Bach was born in Eisenach, which is located in Thuringia, Germany. Since Eisenach is a city in Germany, it follows that Bach was produced by Germany.\n\nFinal Answer: Germany",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp99",
+      "agent_type": "react",
+      "gold_answer": "Federal Assembly",
+      "predicted_answer": "Reasoning: The question asks for the name of the legislative body in Russia, where the Kremlin is located. From the context provided, it states that the Federal Assembly is the national legislature of Russia, which consists of the State Duma and the Federation Council. Therefore, the name of the legislative body is the Federal Assembly.\n\nFinal Answer: Federal Assembly",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp100",
+      "agent_type": "react",
+      "gold_answer": "skull",
+      "predicted_answer": "Reasoning: The context provided mentions that the skull is the bony structure that forms the head and protects the brain. Therefore, the bone that specifically protects the brain is the skull itself.\n\nFinal Answer: Skull",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp1",
+      "agent_type": "reflexion",
+      "gold_answer": "Oxford University",
+      "predicted_answer": "Reasoning: The question asks for the university where J. R. R. Tolkien, the author of The Hobbit, taught. From the provided context, it is stated that J. R. R. Tolkien was a professor at Oxford University. Therefore, the answer is directly found in the context.\n\nFinal Answer: Oxford University",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp2",
+      "agent_type": "reflexion",
+      "gold_answer": "River Thames",
+      "predicted_answer": "Reasoning: The question asks for the river that flows through the city where Ada Lovelace was born. From the context provided, we know that Ada Lovelace was born in London. Additionally, the context about London states that it is crossed by the River Thames. Therefore, the river that flows through London, where Ada Lovelace was born, is the River Thames.\n\nFinal Answer: River Thames",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp3",
+      "agent_type": "reflexion",
+      "gold_answer": "violin",
+      "predicted_answer": "Reasoning: The context states that Antonio Vivaldi is the composer of The Four Seasons and that he was a virtuoso violinist. This indicates that the main instrument he played was the violin.\n\nFinal Answer: Violin",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp4",
+      "agent_type": "reflexion",
+      "gold_answer": "Pacific Ocean",
+      "predicted_answer": "Reasoning: The question asks for the ocean that borders the country whose capital is Lima. From the context, we know that Lima is the capital city of Peru. Additionally, the text states that Peru borders the Pacific Ocean. Therefore, the ocean that borders Peru, the country with Lima as its capital, is the Pacific Ocean.\n\nFinal Answer: Pacific Ocean",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp5",
+      "agent_type": "reflexion",
+      "gold_answer": "mathematics",
+      "predicted_answer": "Reasoning: The context states that Isaac Newton was a physicist and mathematician. Since the three laws of motion are attributed to him, and he is the scientist in question, we can conclude that in addition to physics, he studied mathematics.\n\nFinal Answer: Mathematics",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp6",
+      "agent_type": "reflexion",
+      "gold_answer": "Dead Sea",
+      "predicted_answer": "Reasoning: The question asks for the sea that borders the country where Petra is located. From the context, we know that Petra is in Jordan. The additional information provided states that Jordan borders the Dead Sea to the west. Therefore, the sea that borders Jordan, and thus the country where Petra is located, is the Dead Sea.\n\nFinal Answer: The Dead Sea.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp7",
+      "agent_type": "reflexion",
+      "gold_answer": "Romance",
+      "predicted_answer": "Reasoning: The primary language of Brazil is Portuguese, as stated in the context. The context also indicates that Portuguese is a Romance language. Therefore, the language family of the primary language of Brazil is the Romance language family.\n\nFinal Answer: Romance language family.",
+      "is_correct": true,
+      "attempts": 2,
+      "failure_mode": "none",
+      "reflection_count": 1
+    },
+    {
+      "qid": "hp8",
+      "agent_type": "reflexion",
+      "gold_answer": "Himalayas",
+      "predicted_answer": "Reasoning: The question asks for the mountain range that contains the highest mountain in Nepal, which is the country whose capital is Kathmandu. From the context provided, we know that Mount Everest is the highest mountain in Nepal and that it is part of the Himalayas. Therefore, the mountain range that contains Mount Everest is the Himalayas.\n\nFinal Answer: Himalayas",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp9",
+      "agent_type": "reflexion",
+      "gold_answer": "Paris",
+      "predicted_answer": "Reasoning: The context states that the Eiffel Tower is located on the Champ de Mars in Paris, France. Additionally, the text about Paris confirms that it is the capital city of France. Therefore, the city where the Eiffel Tower is located is Paris.\n\nFinal Answer: Paris",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp10",
+      "agent_type": "reflexion",
+      "gold_answer": "Brazilian real",
+      "predicted_answer": "Reasoning: The question asks for the currency used in the country that hosted the 2016 Summer Olympics. From the context provided, we know that the 2016 Summer Olympics were hosted in Rio de Janeiro, Brazil. Additionally, the context states that the currency of Brazil is the Brazilian real. Therefore, the currency used in Brazil, the host country, is the Brazilian real.\n\nFinal Answer: Brazilian real",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp11",
+      "agent_type": "reflexion",
+      "gold_answer": "Lake Geneva",
+      "predicted_answer": "Reasoning: The context states that Geneva is a city in Switzerland. Additionally, it mentions that Switzerland borders Lake Geneva, which it shares with France. Therefore, the lake that borders the country containing Geneva is Lake Geneva.\n\nFinal Answer: Lake Geneva",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp12",
+      "agent_type": "reflexion",
+      "gold_answer": "Ankara River",
+      "predicted_answer": "Reasoning: The question asks for the river that runs through the capital of Turkey. From the context provided, we know that the capital of Turkey is Ankara. Additionally, the text states that the Ankara River runs through the city of Ankara. Therefore, the river that runs through the capital is the Ankara River.\n\nFinal Answer: Ankara River",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp13",
+      "agent_type": "reflexion",
+      "gold_answer": "Mount Everest",
+      "predicted_answer": "Reasoning: The context states that \"Mount Everest is Earth's highest mountain above sea level.\" This directly indicates that Mount Everest is the tallest mountain in the world. \n\nFinal Answer: Mount Everest",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp14",
+      "agent_type": "reflexion",
+      "gold_answer": "Arabic",
+      "predicted_answer": "Reasoning: The question asks for the most spoken language in the country where the Pyramids of Giza are located. From the context, we know that the Pyramids of Giza are in Egypt. Additionally, the context states that the official language of Egypt is Arabic. Since the official language is typically the most spoken language in a country, we can conclude that Arabic is the most spoken language in Egypt.\n\nFinal Answer: Arabic",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp15",
+      "agent_type": "reflexion",
+      "gold_answer": "Africa",
+      "predicted_answer": "Reasoning: The question asks for the continent of the country whose capital is Nairobi. From the context, we know that Nairobi is the capital of Kenya. Additionally, the text states that Kenya is a country in East Africa. Since East Africa is located on the continent of Africa, we can conclude that Kenya, and therefore Nairobi, belongs to Africa.\n\nFinal Answer: Africa",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp16",
+      "agent_type": "reflexion",
+      "gold_answer": "Ottawa",
+      "predicted_answer": "Reasoning: The question asks for the capital of the country that has a flag featuring a red maple leaf. From the provided context, we know that the flag of Canada features a red maple leaf. Additionally, the context states that the capital of Canada is Ottawa. Therefore, the capital of the country whose flag contains a red maple leaf is Ottawa.\n\nFinal Answer: Ottawa",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp17",
+      "agent_type": "reflexion",
+      "gold_answer": "Sea of Crete",
+      "predicted_answer": "Reasoning: The context states that Athens is the capital of Greece. It also mentions that the Sea of Crete lies between mainland Greece and the island of Crete. The question asks for the strait that separates Greece from Crete. Since the Sea of Crete is mentioned as the body of water between them, it implies that the strait in question is related to this sea.\n\nFinal Answer: The Sea of Crete.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp18",
+      "agent_type": "reflexion",
+      "gold_answer": "Mars",
+      "predicted_answer": "Reasoning: The context provided states that Mars is often called the Red Planet due to its reddish appearance. Therefore, the answer to the question about which planet is known as the Red Planet is directly found in the first piece of context.\n\nFinal Answer: Mars",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp19",
+      "agent_type": "reflexion",
+      "gold_answer": "Mediterranean Sea",
+      "predicted_answer": "Reasoning: The question asks for the sea into which the longest river in Africa, the Nile, empties. From the provided context, specifically the text under the title \"Nile delta,\" it states that \"The Nile empties into the Mediterranean Sea.\" Therefore, I can conclude that the Nile, being the longest river in Africa, empties into the Mediterranean Sea.\n\nFinal Answer: Mediterranean Sea",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp20",
+      "agent_type": "reflexion",
+      "gold_answer": "soybeans",
+      "predicted_answer": "Reasoning: The question asks for the primary export of the country where the Amazon rainforest is largest. From the context, we know that the largest portion of the Amazon rainforest is in Brazil. Additionally, the text states that the primary export of Brazil is soybeans. Therefore, the primary export of the country where the Amazon rainforest is largest (Brazil) is soybeans.\n\nFinal Answer: Soybeans.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp21",
+      "agent_type": "reflexion",
+      "gold_answer": "Leonardo da Vinci",
+      "predicted_answer": "Reasoning: The context provided states that \"The Mona Lisa was painted by Leonardo da Vinci.\" This directly answers the question of who painted the Mona Lisa.\n\nFinal Answer: Leonardo da Vinci.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp22",
+      "agent_type": "reflexion",
+      "gold_answer": "tennis",
+      "predicted_answer": "Reasoning: The context provided states that \"The Championships, Wimbledon\" is a tennis tournament. Since Wimbledon is specifically mentioned in relation to a tennis tournament, it indicates that the sport associated with the stadium called Wimbledon is tennis.\n\nFinal Answer: Tennis",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp23",
+      "agent_type": "reflexion",
+      "gold_answer": "Arabian Desert",
+      "predicted_answer": "Reasoning: The question asks for the desert that covers most of the country whose capital is Riyadh. From the context provided, we know that Riyadh is the capital of Saudi Arabia. Additionally, the text about Saudi Arabia states that the Arabian Desert covers most of the country. Therefore, the answer to the question is the Arabian Desert.\n\nFinal Answer: The Arabian Desert.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp24",
+      "agent_type": "reflexion",
+      "gold_answer": "Japanese",
+      "predicted_answer": "Reasoning: The question asks for the national language of the country whose capital is Tokyo. From the context provided, we know that Tokyo is the capital of Japan. Additionally, the text states that the national language of Japan is Japanese. Therefore, the national language of the country with Tokyo as its capital is Japanese.\n\nFinal Answer: Japanese",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp25",
+      "agent_type": "reflexion",
+      "gold_answer": "Au",
+      "predicted_answer": "Reasoning: The context states that gold is a chemical element with the symbol Au. Since the question asks for the chemical symbol for gold, I can directly refer to the information provided in the context.\n\nFinal Answer: Au",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp26",
+      "agent_type": "reflexion",
+      "gold_answer": "Black Sea",
+      "predicted_answer": "Reasoning: The context states that the Danube river passes through Vienna, which is the capital of Austria. Additionally, it is mentioned that the Danube flows into the Black Sea. Therefore, since the river in question is the Danube, I can conclude that the body of water it flows into is the Black Sea.\n\nFinal Answer: The Black Sea.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp27",
+      "agent_type": "reflexion",
+      "gold_answer": "Chimborazo",
+      "predicted_answer": "Reasoning: The question asks for the highest peak in the country that contains the city of Quito. From the context, we know that Quito is the capital of Ecuador. Additionally, the text states that the highest peak in Ecuador is Chimborazo. Therefore, since Quito is in Ecuador, the highest peak in the country is Chimborazo.\n\nFinal Answer: Chimborazo",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp28",
+      "agent_type": "reflexion",
+      "gold_answer": "Persian Gulf",
+      "predicted_answer": "Reasoning: The context states that Doha is the capital of Qatar. Additionally, it mentions that Qatar is a peninsula that juts into the Persian Gulf. Therefore, the gulf that borders Qatar, the country whose capital is Doha, is the Persian Gulf.\n\nFinal Answer: Persian Gulf",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp29",
+      "agent_type": "reflexion",
+      "gold_answer": "carbon dioxide",
+      "predicted_answer": "Reasoning: The context provided states that plants absorb carbon dioxide during photosynthesis. Additionally, the definition of carbon dioxide confirms that it is a gas. Therefore, the gas that plants primarily absorb for photosynthesis is carbon dioxide.\n\nFinal Answer: Carbon dioxide.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp30",
+      "agent_type": "reflexion",
+      "gold_answer": "Arthur Conan Doyle",
+      "predicted_answer": "Reasoning: The context states that \"A Study in Scarlet is the novel that first introduced Sherlock Holmes\" and that \"A Study in Scarlet was written by Arthur Conan Doyle.\" Therefore, since Arthur Conan Doyle is the author of the novel that introduced Sherlock Holmes, he is the answer to the question.\n\nFinal Answer: Arthur Conan Doyle",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp31",
+      "agent_type": "reflexion",
+      "gold_answer": "North Atlantic Current",
+      "predicted_answer": "Reasoning: The context states that Reykjavik is the capital of Iceland. Additionally, it mentions that the coast of Iceland is warmed by the North Atlantic Current. Since Reykjavik is in Iceland, the ocean current that warms its coast is the North Atlantic Current.\n\nFinal Answer: North Atlantic Current",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp32",
+      "agent_type": "reflexion",
+      "gold_answer": "New York City",
+      "predicted_answer": "Reasoning: The context explicitly states that the headquarters of the United Nations is located in New York City. There is no need for further inference or additional information since the answer is directly provided.\n\nFinal Answer: New York City",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp33",
+      "agent_type": "reflexion",
+      "gold_answer": "Hydrogen",
+      "predicted_answer": "Reasoning: The context states that hydrogen has the atomic number 1. Since the question asks for the element with atomic number 1, and the context directly identifies hydrogen as having this atomic number, I can conclude that hydrogen is the answer.\n\nFinal Answer: Hydrogen",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp34",
+      "agent_type": "reflexion",
+      "gold_answer": "Isabella I of Castile",
+      "predicted_answer": "Reasoning: The context states that the first circumnavigation of the globe was funded by the Spanish Empire. It also mentions that Queen Isabella I of Castile co-founded the Spanish Empire and funded early voyages of exploration. Since the Spanish Empire is the entity that funded the circumnavigation, and Queen Isabella I is associated with the founding and funding of the empire, it follows that she is the queen who ruled the empire that funded the first circumnavigation.\n\nFinal Answer: Queen Isabella I of Castile.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp35",
+      "agent_type": "reflexion",
+      "gold_answer": "Challenger Deep",
+      "predicted_answer": "Reasoning: The context states that the Mariana Trench contains the deepest known point on Earth. Additionally, it specifies that the Challenger Deep is the deepest part of the Mariana Trench. Therefore, the deepest point on Earth is the Challenger Deep.\n\nFinal Answer: Challenger Deep",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp36",
+      "agent_type": "reflexion",
+      "gold_answer": "Mekong",
+      "predicted_answer": "Reasoning: The context provided states that the Mekong river forms much of the border between Thailand and Laos. Therefore, to answer the question about which river serves as the border between these two countries, I can directly refer to this information.\n\nFinal Answer: The Mekong river.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp37",
+      "agent_type": "reflexion",
+      "gold_answer": "Buckingham Palace",
+      "predicted_answer": "Reasoning: The question asks for the official residence of the head of state of the United Kingdom, which is the country whose parliament meets at the Palace of Westminster. According to the provided context, the official London residence of the UK monarch (the head of state) is Buckingham Palace.\n\nFinal Answer: Buckingham Palace",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp38",
+      "agent_type": "reflexion",
+      "gold_answer": "blue whale",
+      "predicted_answer": "Reasoning: The context provided states that the blue whale is the largest animal known to have ever existed. Since the blue whale is a mammal, it follows that it is also the largest mammal in the world.\n\nFinal Answer: The blue whale.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp39",
+      "agent_type": "reflexion",
+      "gold_answer": "Mount Vesuvius",
+      "predicted_answer": "Reasoning: The context provided states that Pompeii was destroyed by a volcanic eruption in 79 AD and that Mount Vesuvius erupted in the same year, leading to the destruction of Pompeii. Therefore, the volcano that last erupted in 79 AD and destroyed Pompeii is Mount Vesuvius.\n\nFinal Answer: Mount Vesuvius",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp40",
+      "agent_type": "reflexion",
+      "gold_answer": "Indian Ocean",
+      "predicted_answer": "Reasoning: The context states that the First Fleet sailed across the Indian Ocean to reach Australia. Since Botany Bay is located in Australia, the ocean crossed by the First Fleet to reach its destination was the Indian Ocean.\n\nFinal Answer: Indian Ocean",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp41",
+      "agent_type": "reflexion",
+      "gold_answer": "Paris",
+      "predicted_answer": "Reasoning: The context provided states that \"Paris is the capital and most populous city of France.\" This directly answers the question about the capital of France.\n\nFinal Answer: Paris",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp42",
+      "agent_type": "reflexion",
+      "gold_answer": "Italy",
+      "predicted_answer": "Reasoning: The opera \"Madama Butterfly\" was composed by Giacomo Puccini. The context states that Giacomo Puccini is an Italian opera composer. Therefore, the origin country of Giacomo Puccini is Italy, which is a country in Europe, not an island nation. \n\nFinal Answer: Italy",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp43",
+      "agent_type": "reflexion",
+      "gold_answer": "Atlantic Ocean",
+      "predicted_answer": "Reasoning: The question asks for the ocean that borders the western coast of the country whose capital is Luanda. From the context provided, we know that Luanda is the capital of Angola. Additionally, the text about Angola states that its western coast borders the Atlantic Ocean. Therefore, the ocean that borders the western coast of Angola, which has Luanda as its capital, is the Atlantic Ocean.\n\nFinal Answer: Atlantic Ocean",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp44",
+      "agent_type": "reflexion",
+      "gold_answer": "football",
+      "predicted_answer": "Reasoning: The context provided states that FC Barcelona is a professional football club. Additionally, the term \"football\" in many regions, including Spain, refers to what is known as soccer in other parts of the world. Therefore, FC Barcelona primarily competes in the sport of football (soccer).\n\nFinal Answer: Football (soccer)",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp45",
+      "agent_type": "reflexion",
+      "gold_answer": "100",
+      "predicted_answer": "Reasoning: The context states that \"Water boils at 100 degrees Celsius at sea level.\" This directly provides the boiling point of water at that specific atmospheric pressure, which is sea level. The second piece of context mentions that boiling point depends on atmospheric pressure, but since the question specifically asks for the boiling point at sea level, we can rely on the first statement.\n\nFinal Answer: 100 degrees Celsius",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp46",
+      "agent_type": "reflexion",
+      "gold_answer": "Sea of Japan",
+      "predicted_answer": "Reasoning: The question asks for the sea that lies to the east of the Korean Peninsula, which is where Busan is located. According to the context provided, the Sea of Japan is mentioned as lying to the east of the Korean Peninsula.\n\nFinal Answer: Sea of Japan",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp47",
+      "agent_type": "reflexion",
+      "gold_answer": "euro",
+      "predicted_answer": "Reasoning: The Colosseum is located in Rome, which is in Italy. According to the context provided, the official currency of Italy is the euro. Therefore, the currency of the country where the Colosseum stands is the euro.\n\nFinal Answer: Euro",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp48",
+      "agent_type": "reflexion",
+      "gold_answer": "Albert Einstein",
+      "predicted_answer": "Reasoning: The context provided states that general relativity is a theory of gravitation developed by Albert Einstein. Therefore, the scientist who developed this theory is clearly mentioned in the text.\n\nFinal Answer: Albert Einstein",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp49",
+      "agent_type": "reflexion",
+      "gold_answer": "Pyrenees",
+      "predicted_answer": "Reasoning: The question asks for the mountain range that forms the northern border of the country whose capital is Madrid. From the context, we know that Madrid is the capital of Spain. Additionally, the text about Spain states that the Pyrenees form the northern border of Spain with France. Therefore, the mountain range that forms the northern border of Spain, which is the country with Madrid as its capital, is the Pyrenees.\n\nFinal Answer: The Pyrenees.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp50",
+      "agent_type": "reflexion",
+      "gold_answer": "Antarctic Desert",
+      "predicted_answer": "Reasoning: The context states that the Antarctic Desert is the largest desert in the world by area. It also provides a definition of deserts, emphasizing that they are characterized by low precipitation rather than temperature. Since the question specifically asks for the largest desert, I can directly refer to the information given in the first context.\n\nFinal Answer: The Antarctic Desert.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp51",
+      "agent_type": "reflexion",
+      "gold_answer": "yen",
+      "predicted_answer": "Reasoning: The question asks for the currency of the country whose capital is Tokyo. From the context provided, we know that Tokyo is the capital city of Japan. Additionally, the text states that the official currency of Japan is the yen. Therefore, the currency of the country (Japan) whose capital is Tokyo is the yen.\n\nFinal Answer: Yen",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp52",
+      "agent_type": "reflexion",
+      "gold_answer": "Mediterranean Sea",
+      "predicted_answer": "Reasoning: The context states that the ancient city of Carthage was located in present-day Tunisia. Additionally, it mentions that Tunisia borders the Mediterranean Sea to the north. Therefore, the sea that borders the country where Carthage was located is the Mediterranean Sea.\n\nFinal Answer: Mediterranean Sea",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp53",
+      "agent_type": "reflexion",
+      "gold_answer": "Colombia",
+      "predicted_answer": "Reasoning: The question asks for the native country of the author of \"One Hundred Years of Solitude.\" From the context provided, we know that \"One Hundred Years of Solitude\" was written by Gabriel Garc\u00eda M\u00e1rquez. Additionally, the context states that Gabriel Garc\u00eda M\u00e1rquez was a Colombian novelist. Therefore, his native country is Colombia.\n\nFinal Answer: Colombia",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp54",
+      "agent_type": "reflexion",
+      "gold_answer": "River Avon",
+      "predicted_answer": "Reasoning: The question asks for the river that flows through the city where William Shakespeare was born. From the context provided, we know that Shakespeare was born in Stratford-upon-Avon. The second piece of context states that Stratford-upon-Avon is a town on the River Avon. Therefore, the river that flows through Stratford-upon-Avon is the River Avon.\n\nFinal Answer: River Avon",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp55",
+      "agent_type": "reflexion",
+      "gold_answer": "Ras Dashen",
+      "predicted_answer": "Reasoning: The question asks for the highest mountain in the country whose capital is Addis Ababa. From the context provided, we know that Addis Ababa is the capital city of Ethiopia. Additionally, the text states that the highest mountain in Ethiopia is Ras Dashen. Therefore, Ras Dashen is the highest mountain in the country with Addis Ababa as its capital.\n\nFinal Answer: Ras Dashen",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp56",
+      "agent_type": "reflexion",
+      "gold_answer": "Indian Ocean",
+      "predicted_answer": "Reasoning: The context states that Mal\u00e9 is the capital city of the Maldives, and it also mentions that the Maldives is an island nation situated in the Indian Ocean. Therefore, to answer the question about the ocean in which the Maldives is located, I can directly refer to the information provided in the context.\n\nFinal Answer: Indian Ocean",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp57",
+      "agent_type": "reflexion",
+      "gold_answer": "helium",
+      "predicted_answer": "Reasoning: The context states that in the Sun, hydrogen atoms fuse together to produce helium. Since the question asks for the gas produced through nuclear fusion, we need to identify the product of this fusion process. The text explicitly mentions that helium is produced as a result of the fusion of hydrogen atoms.\n\nFinal Answer: Helium",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp58",
+      "agent_type": "reflexion",
+      "gold_answer": "Lake Tana",
+      "predicted_answer": "Reasoning: The context provided states that the Blue Nile originates in Ethiopia and specifically mentions that it flows from Lake Tana in the Ethiopian Highlands. Therefore, Lake Tana is identified as the source of the Blue Nile.\n\nFinal Answer: Lake Tana",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp59",
+      "agent_type": "reflexion",
+      "gold_answer": "badminton",
+      "predicted_answer": "Reasoning: The context states that Alexander Graham Bell, the inventor of the telephone, enjoyed badminton in his youth. Badminton is a sport that requires a net and a racket. Therefore, the answer to the question about what sport he played is directly found in the provided information.\n\nFinal Answer: Badminton",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp60",
+      "agent_type": "reflexion",
+      "gold_answer": "Spanish",
+      "predicted_answer": "Reasoning: The question asks for the official language of the country whose capital is Buenos Aires. From the context provided, we know that Buenos Aires is the capital city of Argentina. Additionally, the context states that the official language of Argentina is Spanish. Therefore, the official language of the country with Buenos Aires as its capital is Spanish.\n\nFinal Answer: Spanish",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp61",
+      "agent_type": "reflexion",
+      "gold_answer": "Bosphorus",
+      "predicted_answer": "Reasoning: The question asks for the name of the strait that connects the Black Sea to the Sea of Marmara and passes through the city where the Hagia Sophia is located. From the context provided, we know that the Hagia Sophia is in Istanbul, and Istanbul is divided by the Bosphorus strait. Therefore, the strait that connects the Black Sea to the Sea of Marmara and passes through Istanbul is the Bosphorus strait.\n\nFinal Answer: Bosphorus strait",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp62",
+      "agent_type": "reflexion",
+      "gold_answer": "Netherlands",
+      "predicted_answer": "Reasoning: The question asks for the country of origin of the painter of \"The Starry Night.\" From the context provided, it states that \"The Starry Night was painted by Vincent van Gogh\" and that \"Vincent van Gogh was a Dutch post-impressionist painter from the Netherlands.\" Therefore, I can conclude that the country of origin is the Netherlands.\n\nFinal Answer: The Netherlands.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp63",
+      "agent_type": "reflexion",
+      "gold_answer": "Jupiter",
+      "predicted_answer": "Reasoning: The context provided states that Jupiter is the largest planet in the solar system. There are no other planets mentioned that could be larger than Jupiter, and the information is clear and direct.\n\nFinal Answer: Jupiter",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp64",
+      "agent_type": "reflexion",
+      "gold_answer": "Andes",
+      "predicted_answer": "Reasoning: The question asks for the mountain range that runs along the western coast of the country whose capital is Santiago. From the context, we know that Santiago is the capital of Chile. The Andes mountain range is mentioned as running along the eastern border of Chile, but the question specifically asks about the western coast. A well-known geographical feature that runs along the western coast of Chile is the Coastal Range (or Cordillera de la Costa). Therefore, I need to identify that range as the answer.\n\nFinal Answer: The Coastal Range (Cordillera de la Costa) runs along the western coast of Chile.",
+      "is_correct": false,
+      "attempts": 3,
+      "failure_mode": "reflection_overfit",
+      "reflection_count": 2
+    },
+    {
+      "qid": "hp65",
+      "agent_type": "reflexion",
+      "gold_answer": "Buddhism",
+      "predicted_answer": "Reasoning: The question asks for the primary religion in Cambodia, which is the country where Angkor Wat is located. From the provided context, it is stated that the predominant religion in Cambodia is Theravada Buddhism. Therefore, the answer to the question is directly derived from this information.\n\nFinal Answer: Theravada Buddhism",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp66",
+      "agent_type": "reflexion",
+      "gold_answer": "Atlantic Ocean",
+      "predicted_answer": "Reasoning: The context states that the Congo River empties into the Atlantic Ocean on the west coast of Africa. Therefore, the answer to the question about which ocean the Congo River empties into is directly provided in the text.\n\nFinal Answer: Atlantic Ocean",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp67",
+      "agent_type": "reflexion",
+      "gold_answer": "diamond",
+      "predicted_answer": "Reasoning: The context provided states that diamond scores 10 on the Mohs scale and is described as the hardest natural substance on Earth. Therefore, based on this information, the answer to the question can be directly derived.\n\nFinal Answer: Diamond",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp68",
+      "agent_type": "reflexion",
+      "gold_answer": "Strait of Sicily",
+      "predicted_answer": "Reasoning: The question asks for the specific body of water that lies between Sicily and Tunisia. From the provided context, the relevant information is found in the second text, which states that the Strait of Sicily separates the island of Sicily from the coast of Tunisia. The term \"Strait\" refers to a narrow body of water, which is the correct answer to the question.\n\nFinal Answer: The Strait of Sicily.",
+      "is_correct": true,
+      "attempts": 2,
+      "failure_mode": "none",
+      "reflection_count": 1
+    },
+    {
+      "qid": "hp69",
+      "agent_type": "reflexion",
+      "gold_answer": "United States",
+      "predicted_answer": "Reasoning: The context states that Kilauea is located on the Big Island of Hawaii. Additionally, it mentions that Hawaii is a state of the United States. Therefore, since Hawaii is part of the United States, Kilauea is located in the United States.\n\nFinal Answer: United States",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp70",
+      "agent_type": "reflexion",
+      "gold_answer": "Devanagari",
+      "predicted_answer": "Reasoning: The question asks for the writing system of the language with the most native speakers in India, where the Taj Mahal is located. According to the context provided, Hindi is identified as the most widely spoken native language in India, and it is written in the Devanagari script. Therefore, the writing system used by Hindi is the answer.\n\nFinal Answer: Devanagari script",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp71",
+      "agent_type": "reflexion",
+      "gold_answer": "Beijing",
+      "predicted_answer": "Reasoning: The Great Wall of China was built in China, as stated in the context. The capital of China is provided in the second piece of context, which is Beijing. Therefore, the capital of the country where the Great Wall was built is the same as the capital of China.\n\nFinal Answer: Beijing",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp72",
+      "agent_type": "reflexion",
+      "gold_answer": "Southern Ocean",
+      "predicted_answer": "Reasoning: The context states that penguins are native to Antarctica and live exclusively in the Southern Hemisphere. Additionally, it mentions that Antarctica is surrounded by the Southern Ocean. Therefore, the ocean that surrounds the continent where penguins live in the wild is the Southern Ocean.\n\nFinal Answer: Southern Ocean",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp73",
+      "agent_type": "reflexion",
+      "gold_answer": "French",
+      "predicted_answer": "Reasoning: The question asks for the most widely spoken language in the country where the Louvre museum is located. From the context, we know that the Louvre is located in Paris, France. Additionally, the context states that the official and most widely spoken language of France is French. Therefore, the answer to the question is French.\n\nFinal Answer: French",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp74",
+      "agent_type": "reflexion",
+      "gold_answer": "Rhine",
+      "predicted_answer": "Reasoning: The context states that Ludwig van Beethoven was born in Bonn, Germany. Additionally, the text about Bonn specifies that it is a city on the Rhine river. Therefore, the river that flows through Bonn, where Beethoven was born, is the Rhine river.\n\nFinal Answer: Rhine river",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp75",
+      "agent_type": "reflexion",
+      "gold_answer": "Buran",
+      "predicted_answer": "Reasoning: The context provided mentions a wind called the Buran, which originates in Siberia and affects Central Asia. It is described as a strong cold northeasterly wind that brings blizzard conditions. Since the question specifically asks for the name of the wind that brings cold air from Siberia to Central Asia, and the Buran is identified as such, it is clear that the answer is the Buran.\n\nFinal Answer: Buran",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp76",
+      "agent_type": "reflexion",
+      "gold_answer": "Mali",
+      "predicted_answer": "Reasoning: The context provided states that Timbuktu is a historic city and also specifies its location in the West African country of Mali. Since the question asks for the country where Timbuktu is located, I can directly refer to the information given in the context.\n\nFinal Answer: Mali",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp77",
+      "agent_type": "reflexion",
+      "gold_answer": "Proxima Centauri",
+      "predicted_answer": "Reasoning: The context states that Proxima Centauri is part of the Alpha Centauri system and is identified as the closest individual star to Earth. Since the question asks for the closest star, I can directly refer to the information provided about Proxima Centauri.\n\nFinal Answer: Proxima Centauri.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp78",
+      "agent_type": "reflexion",
+      "gold_answer": "Bay of Bengal",
+      "predicted_answer": "Reasoning: The question asks for the bay that lies to the east of India, where Mumbai is located. According to the context provided, the Bay of Bengal is mentioned as lying to the east of India. Therefore, the answer to the question is the Bay of Bengal.\n\nFinal Answer: Bay of Bengal",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp79",
+      "agent_type": "reflexion",
+      "gold_answer": "Russian",
+      "predicted_answer": "Reasoning: The question asks for the nationality of the author of \"Crime and Punishment.\" From the context provided, we know that \"Crime and Punishment\" was written by Fyodor Dostoevsky. Additionally, the context states that Fyodor Dostoevsky was a Russian novelist. Therefore, we can conclude that his nationality is Russian.\n\nFinal Answer: Russian",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp80",
+      "agent_type": "reflexion",
+      "gold_answer": "H2O",
+      "predicted_answer": "Reasoning: The context provided states that a water molecule consists of two hydrogen atoms and one oxygen atom. This composition is represented by the chemical formula H2O, where \"H\" stands for hydrogen and \"O\" stands for oxygen. \n\nFinal Answer: H2O",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp81",
+      "agent_type": "reflexion",
+      "gold_answer": "Gobi Desert",
+      "predicted_answer": "Reasoning: The question asks for the desert that occupies most of the country whose capital is Ulaanbaatar. From the context provided, Ulaanbaatar is the capital of Mongolia. The second piece of context mentions that the Gobi Desert covers much of southern Mongolia. Since the question is about the desert that occupies most of Mongolia, and the Gobi Desert is specifically mentioned in relation to Mongolia, it is reasonable to conclude that the Gobi Desert is the answer.\n\nFinal Answer: Gobi Desert",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp82",
+      "agent_type": "reflexion",
+      "gold_answer": "India",
+      "predicted_answer": "Reasoning: The context states that chess originated in the Gupta Empire, which is identified as an ancient Indian empire. Therefore, it can be inferred that the game of chess was invented in India.\n\nFinal Answer: India invented the game of chess.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp83",
+      "agent_type": "reflexion",
+      "gold_answer": "Burj Khalifa",
+      "predicted_answer": "Reasoning: The question asks for the tallest building in the country whose capital is Abu Dhabi. From the context, we know that Abu Dhabi is the capital of the United Arab Emirates (UAE). The text also states that the Burj Khalifa, located in Dubai, UAE, is the tallest building in the world and in the UAE. Since the Burj Khalifa is in the UAE, it is also the tallest building in the country whose capital is Abu Dhabi.\n\nFinal Answer: Burj Khalifa",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp84",
+      "agent_type": "reflexion",
+      "gold_answer": "Africa",
+      "predicted_answer": "Reasoning: The question asks for the continent on which the country whose capital is Cairo is located. From the context, we know that Cairo is the capital city of Egypt. Additionally, the text about Egypt states that it is a transcontinental country, with the majority of its territory located in northeastern Africa. This indicates that the primary continent for Egypt is Africa.\n\nFinal Answer: Africa",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp85",
+      "agent_type": "reflexion",
+      "gold_answer": "Eduskunta",
+      "predicted_answer": "Reasoning: The question asks for the name of the parliament of the country where Jean Sibelius was born. According to the context provided, Sibelius was born in H\u00e4meenlinna, Finland. The second piece of context states that the parliament of Finland is called the Eduskunta. Therefore, the answer to the question is the name of the Finnish parliament.\n\nFinal Answer: Eduskunta",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp86",
+      "agent_type": "reflexion",
+      "gold_answer": "Atlantic Ocean",
+      "predicted_answer": "Reasoning: The context states that the Amazon River empties into the Atlantic Ocean. Since the Atlantic Ocean is a large body of saltwater that connects to various seas, the question can be interpreted as asking for the specific sea associated with the Atlantic Ocean where the Amazon River discharges. However, the context does not specify a particular sea, only that it empties into the Atlantic Ocean.\n\nFinal Answer: The Amazon River empties into the Atlantic Ocean.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp87",
+      "agent_type": "reflexion",
+      "gold_answer": "300000 km/s",
+      "predicted_answer": "Reasoning: The speed of light in a vacuum is given as approximately 299,792 kilometres per second. To round this value to the nearest thousand km/s, we look at the hundreds place, which is 7 in this case. Since 7 is greater than 5, we round up the thousands place (which is 299) to 300. Therefore, the rounded value is 300,000 km/s.\n\nFinal Answer: 300,000 km/s",
+      "is_correct": true,
+      "attempts": 2,
+      "failure_mode": "none",
+      "reflection_count": 1
+    },
+    {
+      "qid": "hp88",
+      "agent_type": "reflexion",
+      "gold_answer": "North Sea Canal",
+      "predicted_answer": "Reasoning: The context provided states that the North Sea Canal connects Amsterdam to the North Sea. Therefore, the answer to the question about which canal connects the city of Amsterdam to the North Sea is directly mentioned in the text.\n\nFinal Answer: The North Sea Canal.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp89",
+      "agent_type": "reflexion",
+      "gold_answer": "Spain",
+      "predicted_answer": "Reasoning: The context states that Miguel de Cervantes is the author of the novel Don Quixote. It also mentions that he was a Spanish writer. Therefore, the country of origin for the author of Don Quixote is Spain.\n\nFinal Answer: Spain",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp90",
+      "agent_type": "reflexion",
+      "gold_answer": "skin",
+      "predicted_answer": "Reasoning: The context provided states that the skin is the largest organ of the human body, covering its entire outer surface. This directly answers the question about the largest organ.\n\nFinal Answer: The skin.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp91",
+      "agent_type": "reflexion",
+      "gold_answer": "Buddhism",
+      "predicted_answer": "Reasoning: The question asks for the main religion practiced in the country where Angkor Thom is located. From the context provided, Angkor Thom is in present-day Cambodia. The text about Cambodia states that the predominant religion there is Theravada Buddhism. Therefore, the answer should reflect this information.\n\nFinal Answer: Theravada Buddhism",
+      "is_correct": true,
+      "attempts": 3,
+      "failure_mode": "none",
+      "reflection_count": 2
+    },
+    {
+      "qid": "hp92",
+      "agent_type": "reflexion",
+      "gold_answer": "Ural Mountains",
+      "predicted_answer": "Reasoning: The context provided states that the Ural Mountains are conventionally defined as the boundary between Europe and Asia in Russia. Both pieces of text confirm that the Ural Mountains serve this purpose.\n\nFinal Answer: Ural Mountains",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp93",
+      "agent_type": "reflexion",
+      "gold_answer": "Spanish",
+      "predicted_answer": "Reasoning: Machu Picchu is located in Peru, as stated in the context. The official languages of Peru include Spanish, Quechua, and Aymara, with Spanish being the primary official language. Therefore, the official language of the country where Machu Picchu is located is Spanish.\n\nFinal Answer: Spanish",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp94",
+      "agent_type": "reflexion",
+      "gold_answer": "Adriatic Sea",
+      "predicted_answer": "Reasoning: The context provided states that the Adriatic Sea lies between the Italian Peninsula to the west and the Balkan Peninsula to the east. Therefore, the sea that is located between these two peninsulas is the Adriatic Sea.\n\nFinal Answer: Adriatic Sea",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp95",
+      "agent_type": "reflexion",
+      "gold_answer": "gravity",
+      "predicted_answer": "Reasoning: The context provided states that planets orbit the Sun due to the gravitational force exerted by the Sun's large mass. Additionally, it defines gravity as a fundamental force that attracts objects with mass toward one another. Therefore, the force that keeps planets in orbit around the Sun is gravity.\n\nFinal Answer: Gravity",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp96",
+      "agent_type": "reflexion",
+      "gold_answer": "euro",
+      "predicted_answer": "Reasoning: The Acropolis of Athens is located in Greece. According to the provided context, Greece adopted the euro as its official currency in 2002. Therefore, the national currency of Greece, where the Acropolis is located, is the euro.\n\nFinal Answer: Euro",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp97",
+      "agent_type": "reflexion",
+      "gold_answer": "Gulf Stream",
+      "predicted_answer": "Reasoning: The context mentions that the western coast of Norway remains ice-free throughout the year despite its high latitude. It also states that the Gulf Stream is a warm ocean current that moderates temperatures along the western coasts of Europe, including Norway. Therefore, it can be inferred that the Gulf Stream is responsible for keeping the western coast of Norway free of ice year-round.\n\nFinal Answer: The Gulf Stream.",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp98",
+      "agent_type": "reflexion",
+      "gold_answer": "Germany",
+      "predicted_answer": "Reasoning: The context states that Johann Sebastian Bach was born in Eisenach, which is located in Thuringia, Germany. Since Eisenach is a city in Germany, it follows that Johann Sebastian Bach, being born there, is from Germany.\n\nFinal Answer: Germany",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp99",
+      "agent_type": "reflexion",
+      "gold_answer": "Federal Assembly",
+      "predicted_answer": "Reasoning: The Kremlin is located in Moscow, which is the capital of Russia. The context provided states that the national legislature of Russia is called the Federal Assembly, which consists of the State Duma and the Federation Council. Therefore, the name of the legislative body of the country where the Kremlin is located is the Federal Assembly.\n\nFinal Answer: Federal Assembly",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    },
+    {
+      "qid": "hp100",
+      "agent_type": "reflexion",
+      "gold_answer": "skull",
+      "predicted_answer": "Reasoning: The context mentions that the skull is the bony structure that forms the head and protects the brain. Therefore, the bone that protects the brain is the skull itself.\n\nFinal Answer: Skull",
+      "is_correct": true,
+      "attempts": 1,
+      "failure_mode": "none",
+      "reflection_count": 0
+    }
+  ],
+  "extensions": [
+    "structured_evaluator",
+    "reflection_memory"
+  ],
+  "discussion": "Reflexion significantly improves performance on multi-hop questions by allowing the agent to correct its trajectory after a failed first attempt. The structured evaluator ensures reliable scoring, and reflection memory provides cumulative feedback across attempts. However, this comes at the cost of higher latency and token usage."
+}
